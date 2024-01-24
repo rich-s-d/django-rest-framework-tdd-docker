@@ -12,7 +12,7 @@ from rest_framework.viewsets import ViewSet
 from .models import Movie
 from .serializers import MovieSerializer
 
-# Views using ViewSets
+# Views using ViewSets (https://testdriven.io/blog/drf-views-part-3/)
 class MovieViewSet(ViewSet):
     queryset = Movie.objects.all()
 
