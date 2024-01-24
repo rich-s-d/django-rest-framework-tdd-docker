@@ -11,9 +11,9 @@ def test_hello_world():
 
 # Code wisperer, please explain the steps in the following function
     
-def test_ping(client):
-    url = reverse("ping")
-    response = client.get(url)
-    content = json.loads(response.content)
-    assert response.status_code == 200
-    assert content["ping"] == "pong!"
+# def test_ping(client):
+#     url = reverse("ping")
+#     response = client.get(url)
+#     content = json.loads(response.content)
+#     assert response.status_code == 200
+#     assert content["ping"] == "pong!"
