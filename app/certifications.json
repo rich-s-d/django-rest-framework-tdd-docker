@@ -1,0 +1,46 @@
+[
+    {
+      "model": "certifications.certification",
+      "pk": 1,
+      "fields": {
+        "certification": "AWS Certified Cloud Practioner",
+        "issuer": "AWS",
+        "year_obtained": "2023",
+        "created_date": "2021-01-07T14:07:13.540Z",
+        "cert_expiry_date": "2026"
+      }
+    },
+    {
+        "model": "certifications.certification",
+        "pk": 2,
+        "fields": {
+          "certification": "AWS Certified Soltions Architect Associate",
+          "issuer": "AWS",
+          "year_obtained": "2023",
+          "created_date": "2021-01-07T14:07:13.540Z",
+          "cert_expiry_date": "2026"
+        }
+      },
+      {
+        "model": "certifications.certification",
+        "pk": 3,
+        "fields": {
+          "certification": "AWS Certified Developer Associate",
+          "issuer": "AWS",
+          "year_obtained": "2023",
+          "created_date": "2021-01-07T14:07:13.540Z",
+          "cert_expiry_date": "2026"
+        }
+      },
+      {
+        "model": "certifications.certification",
+        "pk": 4,
+        "fields": {
+          "certification": "AWS Certified DevOps Engineer Professional",
+          "issuer": "AWS",
+          "year_obtained": "2023",
+          "created_date": "2021-01-07T14:07:13.540Z",
+          "cert_expiry_date": "2026"
+        }
+      }
+  ]
