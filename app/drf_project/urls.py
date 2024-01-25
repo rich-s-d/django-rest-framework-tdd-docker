@@ -25,4 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ping/', ping, name="ping"),
     path('', include('movies.urls')),
+    path('', include('certifications.urls')),
 ]
