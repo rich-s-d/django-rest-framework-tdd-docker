@@ -11,6 +11,7 @@ from rest_framework.viewsets import ViewSet
 
 from .models import Movie
 from .serializers import MovieSerializer
+from rest_framework.decorators import action
 
 # Views using ViewSets (https://testdriven.io/blog/drf-views-part-3/)
 class MovieViewSet(ViewSet):
