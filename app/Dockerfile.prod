@@ -7,9 +7,9 @@ WORKDIR /usr/src/app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DEBUG 0
-ENV SECRET_KEY aslkdjakdjakldjakwdjalkdjelkdjakedadkjedjakleedjk
-ENV DJANGO_ALLOWED_HOSTS .herokuapp.com
+# ENV DEBUG 0
+# ENV SECRET_KEY aslkdjakdjakldjakwdjalkdjelkdjakedadkjedjakleedjk
+# ENV DJANGO_ALLOWED_HOSTS .herokuapp.com
 
 # install system dependencies
 RUN apt-get update \
@@ -24,9 +24,17 @@ RUN pip install -r requirements.txt
 # add app
 COPY . .
 
-# add and run as non-root user
-RUN adduser --disabled-password myuser
-USER myuser
+# # collect static files
+# RUN python manage.py collectstatic --noinput
+# Create a user with UID 1000 and GID 1000
+RUN groupadd -g 1000 appgroup && \
+    useradd -r -u 1000 -g appgroup appuser
+# Switch to this user
+USER 1000:1000
 
-# run gunicorn
-CMD gunicorn drf_project.wsgi:application --bind 0.0.0.0:$PORT
+# # add and run as non-root user
+# RUN adduser --disabled-password myuser
+# USER myuser
+
+# # run gunicorn
+# CMD gunicorn drf_project.wsgi:application --bind 0.0.0.0:$PORT
