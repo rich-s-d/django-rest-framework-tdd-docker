@@ -3,6 +3,7 @@
 
 from django.db import models
 
+
 class Certification(models.Model):
     certification = models.CharField(max_length=255)
     issuer = models.CharField(max_length=255)

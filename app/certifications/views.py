@@ -20,7 +20,7 @@ class CertificationViewSet(ViewSet):
         item = get_object_or_404(self.queryset, pk=pk)
         serializer = CertificationSerializer(item)
         return Response(serializer.data)
-    
+
     def create(self, request):
         serializer = CertificationSerializer(data=request.data)
         if serializer.is_valid():

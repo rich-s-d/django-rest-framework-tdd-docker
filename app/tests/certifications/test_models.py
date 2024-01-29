@@ -7,7 +7,10 @@ from certifications.models import Certification
 
 @pytest.mark.django_db
 def test_certifications_model():
-    certification = Certification(certification="AWS Cloud Practioner", issuer="AWS", year_obtained=2023, cert_expiry_date=2026)
+    certification = Certification(certification="AWS Cloud Practioner",
+                                  issuer="AWS",
+                                  year_obtained=2023,
+                                  cert_expiry_date=2026)
     certification.save()
     assert certification.certification == "AWS Cloud Practioner"
     assert certification.issuer == "AWS"

@@ -9,8 +9,7 @@ def test_hello_world():
     assert "hello_world" == "hello_world"
     assert "foo" != "bar"
 
-# Code wisperer, please explain the steps in the following function
-    
+
 # def test_ping(client):
 #     url = reverse("ping")
 #     response = client.get(url)

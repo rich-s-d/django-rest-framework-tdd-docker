@@ -4,7 +4,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 # Using API View
-# from .views import MovieList, MovieDetail 
+# from .views import MovieList, MovieDetail
 # Using ViewSets
 from .views import MovieViewSet
 

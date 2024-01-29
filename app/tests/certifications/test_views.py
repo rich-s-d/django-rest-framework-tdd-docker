@@ -1,7 +1,5 @@
 # app/tests/certifications/test_views.py
 
-import json
-
 import pytest
 
 from certifications.models import Certification
@@ -55,7 +53,8 @@ def test_add_certification_invalid_json_keys(client):
         {
             "certification": "AWS Certifified DevOps Professional",
             "issuer": "AWS",
-            "year_obtained": "2023",        },
+            "year_obtained": "2023"
+        },
         content_type="application/json"
     )
     assert resp.status_code == 400
@@ -66,26 +65,29 @@ def test_add_certification_invalid_json_keys(client):
 
 @pytest.mark.django_db
 def test_get_single_certification(client, add_certification):
-    certification = add_certification(certification="AWS Certifified DevOps Professional",
-                              issuer="AWS",
-                              year_obtained="2023",
-                              cert_expiry_date="2026")
+    certification = add_certification(
+        certification="AWS Certifified DevOps Professional",
+        issuer="AWS",
+        year_obtained="2023",
+        cert_expiry_date="2026")
     resp = client.get(f"/api/certifications/{certification.id}/")
     assert resp.status_code == 200
     assert resp.data["certification"] == "AWS Certifified DevOps Professional"
 
-    
+
 @pytest.mark.django_db
 def test_get_all_certifications(client, add_certification):
-    certification_one = add_certification(certification="AWS Certifified DevOps Professional",
-                              issuer="AWS",
-                              year_obtained="2023",
-                              cert_expiry_date="2026")
-    certification_two = add_certification(certification="AWS Certifified Developer Associate",
-                              issuer="AWS",
-                              year_obtained="2023",
-                              cert_expiry_date="2026")
-    resp = client.get(f"/api/certifications/")
+    certification_one = add_certification(
+        certification="AWS Certifified DevOps Professional",
+        issuer="AWS",
+        year_obtained="2023",
+        cert_expiry_date="2026")
+    certification_two = add_certification(
+        certification="AWS Certifified Developer Associate",
+        issuer="AWS",
+        year_obtained="2023",
+        cert_expiry_date="2026")
+    resp = client.get("/api/certifications/")
     assert resp.status_code == 200
     assert resp.data[0]["certification"] == certification_one.certification
     assert resp.data[1]["certification"] == certification_two.certification
