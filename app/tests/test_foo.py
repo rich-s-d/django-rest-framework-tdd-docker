@@ -1,8 +1,8 @@
 # app/tests/test_foo.py
 
-import json
+# import json
 
-from django.urls import reverse
+# from django.urls import reverse
 
 
 def test_hello_world():
