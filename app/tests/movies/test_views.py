@@ -1,6 +1,7 @@
 # app/tests/movies/test_views.py
 
 import json
+
 import pytest
 
 from movies.models import Movie
