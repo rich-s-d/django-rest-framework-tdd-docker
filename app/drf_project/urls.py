@@ -22,8 +22,8 @@ from .views import ping
 from django.urls import include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('ping/', ping, name="ping"),
-    path('', include('movies.urls')),
-    path('', include('certifications.urls')),
+    path("admin/", admin.site.urls),
+    path("ping/", ping, name="ping"),
+    path("", include("movies.urls")),
+    path("", include("certifications.urls")),
 ]

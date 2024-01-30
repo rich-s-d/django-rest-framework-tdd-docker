@@ -8,7 +8,7 @@ def test_valid_certification_serializer():
         "certification": "AWS Cloud Practioner",
         "issuer": "AWS",
         "year_obtained": "1987",
-        "cert_expiry_date": "2026"
+        "cert_expiry_date": "2026",
     }
     serializer = CertificationSerializer(data=valid_serializer_data)
     assert serializer.is_valid()

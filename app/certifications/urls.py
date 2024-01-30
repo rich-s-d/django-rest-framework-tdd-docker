@@ -7,8 +7,8 @@ from .views import CertificationViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'api/certifications', CertificationViewSet)
+router.register(r"api/certifications", CertificationViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]

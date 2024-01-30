@@ -9,7 +9,7 @@ from rest_framework import routers
 from .views import MovieViewSet
 
 router = routers.DefaultRouter()
-router.register(r'api/movies', MovieViewSet)
+router.register(r"api/movies", MovieViewSet)
 
 
 # Using API View
@@ -19,5 +19,5 @@ router.register(r'api/movies', MovieViewSet)
 # ]
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]
