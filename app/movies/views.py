@@ -46,6 +46,7 @@ class MovieViewSet(ViewSet):
         item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 # Views using API View.
 # class MovieList(APIView):
 #     def get(self, request, format=None):
