@@ -4,7 +4,6 @@ import pytest
 
 from movies.models import Movie
 
-
 # TODO: This test is interferring with the suite: reason unknown
 # @pytest.mark.django_db
 # def test_get_all_movies(client, add_movie):
